@@ -1,0 +1,25 @@
+//Nomes: Lucas Pedro Ferreira Leal Silva - 202204190141
+// Pedro Henrique Ribeiro Gomez - 202202936431
+
+// questão 2 / exemplo 4
+
+public class Main { 
+    public static void main(String[] args) {
+        int[][] mat = {
+            {2, 3, 1, 6},
+            {4, 5, 6, 5},
+            {89, 4, 12, 3}
+        }; // matriz
+        
+        try {
+            for (int i=0;i<=2;i++) { // linhas 
+                for (int j=0;j<=3;j++) { // colunas
+                    System.out.printf("%d\t", mat[i][j]);
+                }
+                System.out.println();
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Um erro foi encontrado no índice do seu vetor"); // caso ocorra um erro
+        }
+    }
+}
