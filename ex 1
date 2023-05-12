@@ -1,0 +1,46 @@
+//Nomes: Lucas Pedro Ferreira Leal Silva - 202204190141
+// Pedro Henrique Ribeiro Gomez - 202202936431
+
+//Questão 1
+public abstract class Funcionario {
+  public String nome;
+  public long cpf;
+  public double salario; // declarar funcionario
+
+  public double Bonificacao() {
+    return this.salario * 0.1;
+  }
+} // adicional
+
+public class Gerente extends Funcionario {
+  public double Bonificacao() {
+    return this.salario * 1.5 + 900;
+  }
+} // gerente herda funcionario
+
+public class Coordenador extends Funcionario {
+  public double Bonificacao() {
+    return this.salario * 1.3 + 800;
+  }
+} // coordenador herda funcionario
+
+public class Main {
+  public static void main(String[] args) {
+    try {
+      Gerente gerente = new Gerente();
+      gerente.nome = "João";
+      gerente.cpf = 123456789;
+      gerente.salario = 5000.0;
+
+      Coordenador coordenador = new Coordenador();
+      coordenador.nome = "Maria";
+      coordenador.cpf = 987654321;
+      coordenador.salario = 4000.0;
+
+      System.out.println("Bonificação do gerente: " + gerente.Bonificacao());
+      System.out.println("Bonificação do coordenador: " + coordenador.Bonificacao());
+    } catch (Exception e) {
+      System.out.println("Ocorreu um erro: " + e.getMessage()); // erro
+    }
+  }
+}
