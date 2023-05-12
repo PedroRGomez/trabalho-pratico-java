@@ -1,0 +1,29 @@
+//Nomes: Lucas Pedro Ferreira Leal Silva - 202204190141
+// Pedro Henrique Ribeiro Gomez - 202202936431
+
+// questão 3
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            BufferedReader leitor = new BufferedReader(new FileReader("arquivo.txt")); // ler um arquivo.txt
+            String linha = leitor.readLine();
+            
+            while (linha != null) { 
+                System.out.println(linha);
+                linha = leitor.readLine();
+            } // lê todas as linhas até chegar ao final
+            
+            leitor.close(); // fecha o arquivo
+        } catch (FileNotFoundException e) {
+            System.out.println("Erro: arquivo não encontrado.");
+        } catch (IOException e) { // caso não haja arquivo
+            System.out.println("Erro: problema na leitura do arquivo."); // caso não consiga ler o arquivo
+        }
+    }
+}
